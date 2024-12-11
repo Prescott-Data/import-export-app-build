@@ -3,7 +3,7 @@
   "type": "app",
   "name": "import-export",
   "title": "Import/Export",
-  "description": "Core app for importing and exporting data to and from DHIS2.",
+  "description": "Core app for importing and exporting data to and from Corelytics.",
   "coreApp": true,
   "minDHIS2Version": "2.41",
   "version": "101.1.17"
