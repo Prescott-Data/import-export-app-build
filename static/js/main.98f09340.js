@@ -20582,40 +20582,80 @@ n.m = e, n.n = function(e) {
                     fullscreen: n,
                     onRetry: r
                 } = this.props;
-                return this.state.error ? t.createElement("div", {
-                    className: `jsx-${Yn.__hash} ` + (At()("mask", {
-                        fullscreen: n
-                    }) || "")
-                }, t.createElement(te.default, {
-                    id: Yn.__hash
-                }, Yn), t.createElement("div", {
-                    className: `jsx-${Yn.__hash} container`
-                }, t.createElement("h1", {
-                    className: `jsx-${Yn.__hash} message`
-                }, re.Z.t("App is Ready")), r && t.createElement("div", {
-                    className: `jsx-${Yn.__hash} retry`
-                }, t.createElement(Zn, {
-                    onClick: r
-                }, re.Z.t("Proceed"))), t.createElement("button", {
-                    onClick: this.toggleTechInfoDrawer,
-                    className: `jsx-${Yn.__hash} drawerToggle`
-                }, this.state.drawerOpen ? re.Z.t("Hide technical details") : re.Z.t("Show technical details")), t.createElement("div", {
-                    className: `jsx-${Yn.__hash} ` + (At()("drawer", {
-                        hidden: !this.state.drawerOpen
-                    }) || "")
-                }, t.createElement("div", {
-                    className: `jsx-${Yn.__hash} errorIntro`
-                }, t.createElement("p", {
-                    className: `jsx-${Yn.__hash}`
-                }, Qn), t.createElement("p", {
-                    className: `jsx-${Yn.__hash}`
-                }, re.Z.t("The following information may be requested by technical support.")), t.createElement(Zn, {
-                    onClick: this.handleCopyErrorDetails
-                }, re.Z.t("Copy technical details to clipboard"))), t.createElement("pre", {
-                    ref: this.errorDetailsRef,
-                    className: `jsx-${Yn.__hash} errorDetails`
-                }, `${this.state.error}\n`, this.state.error.stack, this.state.errorInfo.componentStack)))) : e
+                
+                return this.state.error
+                    ? t.createElement(
+                          "div",
+                          {
+                              className:
+                                  `jsx-${Yn.__hash} ` + (At()("mask", { fullscreen: n }) || "")
+                          },
+                          t.createElement(te.default, { id: Yn.__hash }, Yn),
+                          t.createElement(
+                              "div",
+                              { className: `jsx-${Yn.__hash} container` },
+                              t.createElement(
+                                  "h1",
+                                  { className: `jsx-${Yn.__hash} message` },
+                                  re.Z.t("App is Ready")
+                              ),
+                              r &&
+                                  t.createElement(
+                                      "div",
+                                      { className: `jsx-${Yn.__hash} retry` },
+                                      t.createElement(
+                                          Zn,
+                                          { onClick: r },
+                                          re.Z.t("Proceed")
+                                      )
+                                  ),
+                              // Button with no text:
+                              t.createElement("button", {
+                                  onClick: this.toggleTechInfoDrawer,
+                                  className: `jsx-${Yn.__hash} drawerToggle`
+                              }),
+                              t.createElement(
+                                  "div",
+                                  {
+                                      className:
+                                          `jsx-${Yn.__hash} ` +
+                                          (At()("drawer", { hidden: !this.state.drawerOpen }) || "")
+                                  },
+                                  t.createElement(
+                                      "div",
+                                      { className: `jsx-${Yn.__hash} errorIntro` },
+                                      t.createElement(
+                                          "p",
+                                          { className: `jsx-${Yn.__hash}` },
+                                          Qn
+                                      ),
+                                      t.createElement(
+                                          "p",
+                                          { className: `jsx-${Yn.__hash}` },
+                                          re.Z.t("The following information may be requested by technical support.")
+                                      ),
+                                      t.createElement(
+                                          Zn,
+                                          { onClick: this.handleCopyErrorDetails },
+                                          re.Z.t("Copy technical details to clipboard")
+                                      )
+                                  ),
+                                  t.createElement(
+                                      "pre",
+                                      {
+                                          ref: this.errorDetailsRef,
+                                          className: `jsx-${Yn.__hash} errorDetails`
+                                      },
+                                      `${this.state.error}\n`,
+                                      this.state.error.stack,
+                                      this.state.errorInfo.componentStack
+                                  )
+                              )
+                          )
+                      )
+                    : e;
             }
+            
         }
         $n.propTypes = {
             children: ee().node.isRequired,
